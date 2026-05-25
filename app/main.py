@@ -19,6 +19,7 @@ def executar_fluxo_jarvis(pergunta_usuario: str) -> str:
         "- 'params': objeto com os argumentos da função.\n\n"
         "Regra para buscar_material_rag: Use SEMPRE que o usuário fizer perguntas conceituais, dúvidas de matérias, pedir explicações ou resumos (ex: {'termo_busca': 'regressão linear'}).\n\n"
         "Exemplo de saída para listagem:\n"
+        "Sempre que a ação for adicionar_tarefa, use as chaves titulo e data_prazo.\n"
         "{\"acao\": \"listar_tarefas\", \"params\": {}}\n\n"
         f"Pedido do usuário: {pergunta_usuario}\n"
         "Resposta JSON:"

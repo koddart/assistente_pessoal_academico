@@ -1,1 +1,145 @@
-[]
+[
+  {
+    "timestamp": "2026-05-24T23:31:31.234778",
+    "ferramenta": "buscar_material_rag",
+    "entrada": {
+      "termo_busca": "aula 6 lógica"
+    },
+    "saida": "Resultados encontrados nos materiais de estudo:\n\n--- [Fonte: bolo.pdf] ---\nA receita de bolo leva trigo.\n\n--- [Fonte: ia.pdf] ---\nA inteligência artificial estuda agentes.\n\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:32:04.185734",
+    "ferramenta": "consultar_agenda",
+    "entrada": {},
+    "saida": "Próximos compromissos na agenda:\n- 2026-05-23: [AULA] Aula de Modelagem de Dados às 19:00.\n- 2026-05-24: [PROVA] Prova de Inteligência Artificial às 08:00.\n- 2026-05-25: [ENTREGA] Prazo final para envio do Trabalho Prático do Jarvis.\n- 2026-05-28: [PALESTRA] Palestra sobre Large Language Models no auditório central.\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:32:46.282468",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Pendente\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:33:33.921764",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "nome_tarefa": "LIA",
+      "data_tarefa": "01/06/2026"
+    },
+    "saida": "Erro na execução da ferramenta: adicionar_tarefa() got an unexpected keyword argument 'nome_tarefa'"
+  },
+  {
+    "timestamp": "2026-05-24T23:34:54.318816",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "tarefa": "LIA",
+      "data": "2026-01-01"
+    },
+    "saida": "Erro na execução da ferramenta: adicionar_tarefa() got an unexpected keyword argument 'tarefa'"
+  },
+  {
+    "timestamp": "2026-05-24T23:37:14.903324",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Pendente\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:37:37.868281",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "disciplina": "LIA",
+      "data": "2027-02-05"
+    },
+    "saida": "Erro na execução da ferramenta: 'str' object has no attribute 'exists'"
+  },
+  {
+    "timestamp": "2026-05-24T23:37:54.296033",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "tarefa": "LIA",
+      "data": "2027-02-05"
+    },
+    "saida": "Erro na execução da ferramenta: 'str' object has no attribute 'exists'"
+  },
+  {
+    "timestamp": "2026-05-24T23:38:51.492515",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "titulo": "LIA",
+      "data_prazo": "01/01/2026"
+    },
+    "saida": "Erro na execução da ferramenta: 'str' object has no attribute 'exists'"
+  },
+  {
+    "timestamp": "2026-05-24T23:40:51.982117",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "titulo": "LIA",
+      "data_prazo": "01/01/2026"
+    },
+    "saida": "Tarefa '[6] LIA' adicionada com sucesso com prazo para 01/01/2026."
+  },
+  {
+    "timestamp": "2026-05-24T23:41:01.213266",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Pendente\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n- [6] LIA (Prazo: 01/01/2026) - Pendente\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:45:16.856411",
+    "ferramenta": "consultar_agenda",
+    "entrada": {},
+    "saida": "Próximos compromissos na agenda:\n- 2026-05-23: [AULA] Aula de Modelagem de Dados às 19:00.\n- 2026-05-24: [PROVA] Prova de Inteligência Artificial às 08:00.\n- 2026-05-25: [ENTREGA] Prazo final para envio do Trabalho Prático do Jarvis.\n- 2026-05-28: [PALESTRA] Palestra sobre Large Language Models no auditório central.\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:45:37.524390",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Pendente\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n- [6] LIA (Prazo: 01/01/2026) - Pendente\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:46:29.532206",
+    "ferramenta": "adicionar_tarefa",
+    "entrada": {
+      "titulo": "LEDES",
+      "data_prazo": "06/06/2028"
+    },
+    "saida": "Tarefa '[7] LEDES' adicionada com sucesso com prazo para 06/06/2028."
+  },
+  {
+    "timestamp": "2026-05-24T23:46:39.302439",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Pendente\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n- [6] LIA (Prazo: 01/01/2026) - Pendente\n- [7] LEDES (Prazo: 06/06/2028) - Pendente\n"
+  },
+  {
+    "timestamp": "2026-05-24T23:46:59.839267",
+    "ferramenta": "concluir_tarefa",
+    "entrada": {
+      "tarefa_id": 2
+    },
+    "saida": "Erro na execução da ferramenta: concluir_tarefa() got an unexpected keyword argument 'tarefa_id'"
+  },
+  {
+    "timestamp": "2026-05-24T23:47:10.132262",
+    "ferramenta": "concluir_tarefa",
+    "entrada": {
+      "tarefa": "LEDES"
+    },
+    "saida": "Erro na execução da ferramenta: concluir_tarefa() got an unexpected keyword argument 'tarefa'"
+  },
+  {
+    "timestamp": "2026-05-24T23:49:44.984706",
+    "ferramenta": "concluir_tarefa",
+    "entrada": {
+      "tarefa_id": 2
+    },
+    "saida": "Tarefa 'extensao' concluída com sucesso."
+  },
+  {
+    "timestamp": "2026-05-24T23:49:53.754338",
+    "ferramenta": "listar_tarefas",
+    "entrada": {},
+    "saida": "Sua Lista de Tarefas:\n- [1] Tarefa para segunda-feira da semana que vem (Prazo: 2026-05-25) - Concluída\n- [2] extensao (Prazo: 2027-02-27) - Concluída\n- [3] IA (Prazo: 2026-05-24) - Pendente\n- [4] APSOO (Prazo: 2026-05-24) - Concluída\n- [5] PROGWEB (Prazo: 2026-05-27) - Pendente\n- [6] LIA (Prazo: 01/01/2026) - Pendente\n- [7] LEDES (Prazo: 06/06/2028) - Pendente\n"
+  }
+]

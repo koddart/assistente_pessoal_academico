@@ -1,37 +1,45 @@
 import json
-import os
+from pathlib import Path
+import os 
 
+TAREFAS_PATH = Path("app/memory/tarefas.json")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TAREFAS_PATH = os.path.join(BASE_DIR, "memory", "tarefas.json")
 
-def adicionar_tarefa(titulo: str, data_prazo: str = "undefined") -> str:
+def adicionar_tarefa(titulo=None, data_prazo="undefined", nome_tarefa=None, tarefa=None, prazo=None, data=None, dia=None, **kwargs):
     tarefas = []
-    if os.path.exists(TAREFAS_PATH):
+
+    if TAREFAS_PATH.exists():
         try:
-            with open(TAREFAS_PATH, "r", encoding="utf-8") as f:
+            with TAREFAS_PATH.open("r", encoding="utf-8") as f:
                 tarefas = json.load(f)
         except Exception:
             tarefas = []
+
+    titulo = titulo or nome_tarefa or tarefa
+    if not titulo or not str(titulo).strip():
+        return "Não foi possível adicionar a tarefa: título não informado."
+
+    data_prazo = prazo or data or dia or data_prazo
 
     novo_id = max([t.get("id", 0) for t in tarefas], default=0) + 1
 
     nova_tarefa = {
         "id": novo_id,
-        "titulo": titulo.strip(),
+        "titulo": str(titulo).strip(),
         "status": "Pendente",
-        "data_prazo": data_prazo.strip()
+        "data_prazo": str(data_prazo).strip(),
     }
 
     tarefas.append(nova_tarefa)
-    os.makedirs(os.path.dirname(TAREFAS_PATH), exist_ok=True)
-    
-    with open(TAREFAS_PATH, "w", encoding="utf-8") as f:
+
+    TAREFAS_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+    with TAREFAS_PATH.open("w", encoding="utf-8") as f:
         json.dump(tarefas, f, indent=2, ensure_ascii=False)
 
     prazo_str = f" com prazo para {data_prazo}" if data_prazo != "undefined" else ""
     return f"Tarefa '[{novo_id}] {titulo}' adicionada com sucesso{prazo_str}."
-
 
 def listar_tarefas() -> str:
     if not os.path.exists(TAREFAS_PATH):
@@ -56,48 +64,37 @@ def listar_tarefas() -> str:
     
     return resultado
 
-def concluir_tarefa(id_tarefa: int = None, titulo: str = None, busca_contextual: str = None) -> str:
-    if not os.path.exists(TAREFAS_PATH):
-        return "Sua Lista de Tarefas está vazia."
+def concluir_tarefa(id_tarefa=None, tarefa_id=None, tarefa=None, titulo=None, nome=None, **kwargs):
 
-    try:
-        with open(TAREFAS_PATH, "r", encoding="utf-8") as f:
+    tarefas = []
+
+    if TAREFAS_PATH.exists():
+        with TAREFAS_PATH.open("r", encoding="utf-8") as f:
             tarefas = json.load(f)
-    except Exception:
-        return "Erro ao ler o arquivo de tarefas."
+
+    identificador = id_tarefa or tarefa_id or tarefa or titulo or nome
+
+    if identificador is None:
+        return "Nenhuma tarefa foi informada."
 
     tarefa_encontrada = None
 
-    if id_tarefa is not None:
-        try:
-            id_busca = int(id_tarefa)
-            for t in tarefas:
-                if t.get("id") == id_busca:
-                    tarefa_encontrada = t
-                    break
-        except ValueError:
-            pass
+    for item in tarefas:
 
-    if not tarefa_encontrada and titulo:
-        busca_lower = titulo.lower().strip()
-        for t in tarefas:
-            if busca_lower in t.get("titulo", "").lower():
-                tarefa_encontrada = t
-                break
+        if str(item.get("id")) == str(identificador):
+            tarefa_encontrada = item
+            break
 
-    if not tarefa_encontrada and busca_contextual:
-        busca_lower = busca_contextual.lower().strip()
-        for t in tarefas:
-            if busca_lower in t.get("titulo", "").lower() or busca_lower in t.get("data_prazo", "").lower():
-                tarefa_encontrada = t
-                break
+        if item.get("titulo", "").lower() == str(identificador).lower():
+            tarefa_encontrada = item
+            break
 
-    if not tarefa_encontrada:
-        return "Nenhuma tarefa correspondente foi encontrada para ser concluída."
+    if tarefa_encontrada is None:
+        return "Tarefa não encontrada."
 
     tarefa_encontrada["status"] = "Concluída"
 
-    with open(TAREFAS_PATH, "w", encoding="utf-8") as f:
+    with TAREFAS_PATH.open("w", encoding="utf-8") as f:
         json.dump(tarefas, f, indent=2, ensure_ascii=False)
 
-    return f"Tarefa '{tarefa_encontrada['titulo']}' [ID {tarefa_encontrada['id']}] marcada como concluída com sucesso!"
+    return f"Tarefa '{tarefa_encontrada['titulo']}' concluída com sucesso."

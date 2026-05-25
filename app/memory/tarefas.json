@@ -8,7 +8,7 @@
   {
     "id": 2,
     "titulo": "extensao",
-    "status": "Pendente",
+    "status": "Concluída",
     "data_prazo": "2027-02-27"
   },
   {
@@ -28,5 +28,17 @@
     "titulo": "PROGWEB",
     "status": "Pendente",
     "data_prazo": "2026-05-27"
+  },
+  {
+    "id": 6,
+    "titulo": "LIA",
+    "status": "Pendente",
+    "data_prazo": "01/01/2026"
+  },
+  {
+    "id": 7,
+    "titulo": "LEDES",
+    "status": "Pendente",
+    "data_prazo": "06/06/2028"
   }
 ]
